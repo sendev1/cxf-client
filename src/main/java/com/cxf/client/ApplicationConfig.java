@@ -49,16 +49,7 @@ public class ApplicationConfig {
 		return bus;
 	}*/
 
-	// If @Bean method is used to create code then following error is thrown while running native image
-	/*nested exception is java.lang.RuntimeException: java.lang.InternalError: java.lang.NoSuchMethodError: org.apache.cxf.binding.soap.wsdl.extensions.SoapBinding.setElementType(javax.xml.namespace.QName)*/
-    /*@Bean
-    public HelloWorldPortType helloWorldClient() throws MalformedURLException {
-        final QName SERVICE = new QName("http://server.cxf.com/", "HelloWorldImplService");
-        final Service service = Service.create(new URL("http://localhost:8080/cxf/ws/helloworld?wsdl"),
-                SERVICE);
-       return service.getPort(HelloWorldPortType.class);
-    }*/
-
+	
 	@Bean("soapClient")
 	public HelloWorldPortType helloWorldClient(){
         final Bus bus = new ExtensionManagerBus();
